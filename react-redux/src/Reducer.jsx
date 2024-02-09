@@ -1,27 +1,27 @@
-import { INCREMENT, DECREMENT } from './Actions';
-import './App.css'
-
-// Initial state
 const initialState = {
-  count: 0,
+  users: [],
+  error: "",
 };
 
-// Reducer function
-const likeCounterReducer = (state = initialState, action) => {
+function userReducer(state = initialState, action) {
   switch (action.type) {
-    case INCREMENT:
+    case "FETCH_DATA":
       return {
         ...state,
-        count: state.count + 1,
+        users: action.payload,
+        error: "",
       };
-    case DECREMENT:
+
+    case "ERROR":
       return {
         ...state,
-        count: state.count - 1,
+        users: [],
+        error: action.payload,
       };
+
     default:
       return state;
   }
-};
+}
 
-export default likeCounterReducer;
+export default userReducer;

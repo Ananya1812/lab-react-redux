@@ -1,11 +1,15 @@
-import React from 'react';
-import LikeCounter from './LikeCounter';
-import './App.css'
+import "./App.css";
+import React from "react";
+import Counter from "./Counter";
+import { Provider } from "react-redux";
+import store from "./store";
 function App() {
   return (
-    <div className="App">
-      <LikeCounter />
-    </div>
+    <Provider store={store}>
+      <div className="container">
+        <Counter />
+      </div>
+    </Provider>
   );
 }
 

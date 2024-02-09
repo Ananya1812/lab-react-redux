@@ -1,10 +1,18 @@
-export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';
-// Action creators
-export const incrementLike = () => ({
-  type: INCREMENT,
-});
+// Action types
+const FETCH_DATA = "FETCH_DATA";
+const ERROR = "ERROR";
 
-export const decrementLike = () => ({
-  type: DECREMENT,
-});
+// Action creators
+export function fetchUserData(userData) {
+  return {
+    type: FETCH_DATA,
+    payload: userData,
+  };
+}
+
+export function showError(errorMessage) {
+  return {
+    type: ERROR,
+    payload: errorMessage,
+  };
+}
